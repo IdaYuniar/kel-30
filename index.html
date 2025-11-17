@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VINIX 7 ASISTEN</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <style>
+        /* Warna VINIX */
+        :root {
+            --vinix-blue-dark: #1a4c90; /* Biru gelap VINIX (untuk teks dan tombol) */
+            --vinix-glow-color: #4c8aeb; /* Biru terang untuk efek neon/glow */
+            --particle-star-color: #4c8aeb; /* Biru tua untuk bintang/partikel */
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Perubahan 1: Latar Belakang Putih */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white; /* Latar belakang diubah menjadi putih solid */
+            z-index: 0;
+        }
+        
+
+        /* MENGHILANGKAN KUNING AUTOFILl */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 1000px white inset !important; 
+            -webkit-text-fill-color: var(--vinix-blue-dark) !important; 
+            transition: background-color 5000s ease-in-out 0s; 
+        }
+
+        .login-box {
+            position: relative;
+            z-index: 1;
+            width: 95%;
+            max-width: 400px;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.98); /* Tetap putih tapi sedikit transparan */
+            border-radius: 20px;
+            
+            /* Perubahan 2: Efek Cahaya Neon Biru */
+            box-shadow: 0 0 10px var(--vinix-glow-color), /* Cahaya neon lebih dekat */
+                        0 0 20px var(--vinix-glow-color),
+                        0 12px 25px rgba(0, 0, 0, 0.15); /* Bayangan default tetap */
+            
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Logo/Ikon */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            width: 150px;
+            height: auto;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .login-box h5 { /* Mengubah h3 menjadi h5 sesuai HTML Anda */
+            color: var(--vinix-blue-dark);
+            margin-bottom: 25px;
+            /* Opsional: Tambahkan sedikit shadow pada teks header */
+            text-shadow: 0 0 5px rgba(46, 159, 240, 0.5); 
+        }
+
+        .form-control {
+            border-radius: 10px;
+            margin-bottom: 15px;
+            /* Opsional: Tambahkan border glow saat fokus */
+            transition: box-shadow 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: var(--vinix-glow-color);
+            box-shadow: 0 0 8px rgba(76, 138, 235, 0.6);
+        }
+
+        /* Tombol Login */
+        .btn-login {
+            background-color: var(--vinix-blue-dark);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: bold;
+            width: 100%;
+            transition: 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Efek Neon pada Tombol */
+            box-shadow: 0 0 5px var(--vinix-glow-color);
+        }
+
+        .btn-login:hover {
+            background-color: var(--vinix-glow-color); /* Warna terang saat hover */
+            box-shadow: 0 0 15px var(--vinix-glow-color);
+        }
+        
+        .footer-links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            color: var(--vinix-blue-dark);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="particles-js"></div>
+
+<div class="login-box">
+    
+    <div class="logo-container">
+        <img src="img/logo vinix asisten.png" alt="Logo VINIX 7 ASISTEN">
+    </div>
+
+
+    <h5>Masuk ke vinix7 Asisten</h5>
+
+    <form action="halaman-utama.html" method="post">
+        <input type="text" class="form-control" name="username" placeholder="Username" required>
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-login">LOGIN</button>
+    </form>
+    
+   <div class="footer-links">
+        Belum punya akun? <a href="register.html">Buat Akun Baru</a> 
+    </div>
+</div>
+
+<script>
+    // Perubahan 3: Konfigurasi Partikel (Bintang) Biru Tua
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 0// Menambah jumlah partikel
+            },
+            "color": {
+                "value": "#0d47a1" // Kode warna Biru Tua untuk partikel
+            },
+            "shape": {
+                "type": "star" // Mengubah bentuk dari circle menjadi star (bintang)
+            },
+            "opacity": {
+                "value": 0.8
+            },
+            "size": {
+                "value": 3
+            },
+            "line_linked": {
+                "enable": false // Menyembunyikan garis agar terlihat seperti bintang di kejauhan
+            },
+            "move": {
+                "enable": true,
+                "speed": 1.5 // Sedikit lambat
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab" // Efek saat disentuh mouse
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push" // Efek saat diklik
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

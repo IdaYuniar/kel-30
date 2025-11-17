@@ -1,0 +1,146 @@
+/* Warna VINIX */
+:root {
+    --vinix-blue-dark: #1a4c90;
+    --vinix-glow-color: #4c8aeb;
+    --particle-star-color: #4c8aeb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Latar Belakang Putih */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white; 
+    z-index: 0;
+}
+
+.login-box {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    max-width: 600px; /* Ukuran kotak diperlebar */
+    
+    background: rgba(255, 255, 255, 0.98); 
+    border-radius: 20px;
+    
+    /* EFEK NEON DITINGKATKAN */
+    box-shadow: 0 0 15px var(--vinix-glow-color), 
+                0 0 30px rgba(76, 138, 235, 0.3),
+                0 12px 25px rgba(0, 0, 0, 0.15); 
+    
+    padding: 40px 30px; 
+    text-align: center;
+}
+
+/* Logo/Ikon */
+.logo-container {
+    margin-bottom: 25px;
+}
+.logo-container img {
+    width: 150px;
+    height: auto;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    100%, 100% {
+        transform: translateY(0);
+    }
+    500% {
+        transform: translateY(-10px);
+    }
+}
+
+.login-box {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    /* UBAH NILAI INI UNTUK LEBAR YANG LEBIH BESAR */
+    max-width: 750px; 
+    
+    background: rgba(255, 255, 255, 0.98); 
+    border-radius: 20px;
+    
+    /* EFEK NEON DITINGKATKAN */
+    box-shadow: 0 0 15px var(--vinix-glow-color), 
+                0 0 30px rgba(76, 138, 235, 0.3),
+                0 12px 25px rgba(0, 0, 0, 0.15); 
+    
+    padding: 40px 30px; 
+    text-align: center;
+}
+
+/* MENGHILANGKAN KUNING AUTOFILl */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important; 
+    -webkit-text-fill-color: var(--vinix-blue-dark) !important; 
+    transition: background-color 5000s ease-in-out 0s; 
+}
+
+.form-control {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    background-color: white; /* Latar belakang input PUTIH */
+}
+
+.form-control:focus {
+    /* CAHAYA NEON DITINGKATKAN pada focus */
+    border-color: var(--vinix-glow-color);
+    box-shadow: 0 0 12px var(--vinix-glow-color);
+    outline: none;
+}
+
+/* Tombol Login */
+.btn-login {
+    background-color: var(--vinix-blue-dark);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s ease, box-shadow 0.3s ease;
+    
+    /* EFEK NEON DITINGKATKAN pada Tombol */
+    box-shadow: 0 0 8px rgba(76, 138, 235, 0.8);
+}
+
+.btn-login:hover {
+    background-color: var(--vinix-glow-color); 
+    box-shadow: 0 0 15px var(--vinix-glow-color);
+}
+
+.footer-links {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: var(--vinix-blue-dark);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

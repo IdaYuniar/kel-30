@@ -1,0 +1,370 @@
+/* SKEMA WARNA BARU */
+:root{
+    --bg:#FFFFFF; /* Latar Belakang Putih */
+    --card-bg:#F8F9FA; /* Background Card sedikit off-white */
+    --text-main:#333333; /* Warna Teks Utama Hitam/Abu-abu Gelap */
+    --primary:#FFC300; /* Kuning Keemasan/Emas untuk Aksen */
+    --accent:#1E5EAE; /* Biru Logo untuk Aksen Sekunder */
+    --muted:#6c757d; /* Warna Teks Muted */
+    --delete-red: #dc3545; /* Warna untuk tombol Hapus */
+}
+
+/* RESET DAN DASAR */
+*{box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    background:var(--bg);
+    color:var(--text-main);
+}
+.container{max-width:1100px;margin:32px auto;padding:24px}
+.muted{color:var(--muted);font-size:13px}
+.flex-1 {
+    flex: 1;
+}
+
+/* HEADER DAN NAVIGASI */
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo-img{
+    width: 180px; 
+    height: auto;
+    margin-right: 0; 
+}
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+}
+h1{font-size:20px;margin:0}
+nav{display:flex;gap:8px}
+
+/* Tombol Tab */
+.tab{
+    background:transparent;
+    border:1px solid var(--muted); 
+    padding:8px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    color:var(--muted);
+    transition: all 0.2s;
+}
+.tab.active{
+    background:var(--accent); 
+    border:1px solid var(--accent);
+    color:white; 
+}
+ 
+/* GAYA UMUM GRID DAN CARD */
+.grid{display:grid;grid-template-columns:1fr 360px;gap:16px}
+.card{
+    background:var(--card-bg);
+    border-radius:12px;
+    padding:18px;
+    margin-top:12px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0 10px rgba(30, 94, 174, 0.1), 
+                0 4px 12px rgba(0,0,0,0.05); 
+}
+.card-inner {
+    margin-top: 12px;
+}
+
+/* INPUT DAN TOMBOL */
+.row{display:flex;gap:8px}
+input,select,textarea{
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid var(--muted);
+    background:white;
+    color:var(--text-main);
+}
+label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--accent);
+}
+button{padding:10px 12px;border-radius:10px;border:0;cursor:pointer}
+.btn-primary{background:var(--primary);color:var(--text-main); font-weight: 600;}
+.btn-ghost{background:transparent;border:1px solid var(--muted);color:var(--text-main)}
+
+/* GAYA KHUSUS FINANCE INPUT (Perbaikan Tampilan) */
+.input-group-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px; 
+}
+.input-group-col {
+    display: flex;
+    flex-direction: column;
+}
+.input-group-col label {
+    margin-top: 0; /* Reset margin label karena di dalam kolom */
+}
+
+.button-row {
+    margin-top:10px;
+    display:flex;
+    gap:8px;
+    align-items:center
+}
+.result-box {
+    margin-top: 14px;
+}
+
+/* DISTRIBUSI BAR (Finance) */
+.graph-section {
+    margin-top: 20px;
+}
+.graph-title {
+    margin-bottom:10px; 
+    font-size:16px;
+}
+.bar-container {
+    display: flex; 
+    height: 30px; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.bar-segment {
+    text-align: center; 
+    color: white; 
+    font-size: 12px; 
+    line-height: 30px; 
+    transition: width 0.5s;
+}
+.bar-fixed { background-color: #007bff; }
+.bar-save { background-color: #28a745; }
+.bar-variable { background-color: var(--primary); color: var(--text-main); }
+.legend {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 5px; 
+    font-size: 12px;
+}
+.legend-box {
+    font-weight: bold;
+    margin-right: 2px;
+}
+.fixed-color { color: #007bff; }
+.save-color { color: #28a745; }
+.variable-color { color: var(--primary); }
+
+/* PROGRESS BAR (Finance dan Career) */
+.progress-section {
+    margin-top: 14px;
+}
+.progress-ratio {
+    margin-top:4px;
+}
+.progress-bar-container {
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.progress-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+/* Gaya untuk Data Industri yang Diintegrasikan */
+.skill-data {
+    margin-top: 10px;
+    padding: 8px;
+    background: #e9f5ff; 
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+/* FINANCE LIST */
+.list-section {
+    margin-top: 16px;
+}
+.expense-input-row {
+    gap:6px;
+    margin-top:8px;
+}
+.expense-list{
+    margin-top:10px;
+    list-style:none;
+    padding:0
+}
+.expense-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px dashed #ccc;
+}
+.tip-list {
+    padding-left:18px;
+    margin:8px 0;
+}
+
+/* CAREER ZONE */
+.new-link-btn{
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.new-link-btn:hover {
+    background: #15488c; 
+}
+.resume-preview{
+    background:#F4F4F4;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #dee2e6;
+    min-height:220px
+}
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+}
+
+/* MENTAL ZONE / COMMUNITY */
+.reply-indicator-box {
+    padding: 8px; 
+    margin-top: 12px; 
+    border-left: 3px solid var(--accent); 
+    background: white; 
+    border-radius: 4px; 
+    display: flex;
+    align-items: center;
+}
+.cancel-reply-btn {
+    padding: 2px 6px; 
+    margin-left: 8px; 
+    font-size: 11px;
+    height: fit-content;
+}
+.messages{
+    max-height:320px;
+    overflow:auto;
+    padding:8px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-top:12px;
+}
+.msg{
+    background:white;
+    border:1px solid #e9ecef;
+    padding:10px;
+    border-radius:8px;
+    position: relative; 
+}
+.msg-reply-indicator {
+    padding: 4px 8px;
+    margin-bottom: 5px;
+    background: #f1f1f1;
+    border-left: 3px solid var(--primary);
+    border-radius: 4px;
+    font-style: italic;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.btn-ghost.reply-btn { 
+    padding: 4px 8px; 
+    font-size: 11px;
+    height: fit-content;
+}
+.btn-delete {
+    background: transparent;
+    border: 1px solid var(--delete-red);
+    color: var(--delete-red);
+    padding: 4px 8px;
+    font-size: 11px;
+    height: fit-content;
+}
+/* Reaksi */
+.reaction-trigger-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 6px;
+    margin-left: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.reaction-trigger-btn:hover {
+    background: #e9ecef;
+}
+.reactions-display {
+    font-size: 16px;
+    margin-top: 8px;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    display: flex;
+    gap: 8px;
+}
+.reaction-count {
+    cursor: pointer;
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+.sticker-modal {
+    position: absolute; 
+    bottom: 30px; 
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 250px; 
+}
+.modal-sticker {
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.1s;
+}
+.modal-sticker:hover {
+    transform: scale(1.15);
+}
+
+/* FOOTER */
+footer{
+    margin-top:18px;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px
+}
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .grid{grid-template-columns:1fr}
+    .brand h1{font-size:16px}
+    .logo-img{width:150px;height:auto;margin-right:0;}
+}
